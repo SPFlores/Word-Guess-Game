@@ -1,4 +1,4 @@
-// only allow letters to be pressed not numbers
+// only allow letters to be pressed, not numbers
 
 // make an array (object?) of words computer can choose from
 
@@ -7,3 +7,5 @@
 // if word completed before guesses = 0, show corresponding image, increase wins by one; if not completed, show fail image and reset guesses, word, and increase losses by one
 
 // make sure you can't input the same letter more than once
+
+// kj
