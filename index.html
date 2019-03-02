@@ -13,29 +13,50 @@
 </head>
 
 <body>
-  <!-- large logo text HANGMAN in Supernatural font -->
-  <h1 id="spnfont">HANGMAN</h1>
-  <!-- Supernatural style -->
-  <h3 id="spnfont">SUPERNATURAL Style!</h3>
+  <div class="container">
+    <div class="row center-align">
+      <div class="col s12 m12 l12 xl12">
+        <!-- large logo text HANGMAN in Supernatural font -->
+        <h1 id="spnfont">HANGMAN</h1>
+      </div>
+      <div class="col s12 m12 l12 xl12">
+        <!-- Supernatural style -->
+        <h3 id="spnfont">SUPERNATURAL Style!</h3>
+      </div>
+    </div>
 
-  <!-- paragraph "play along with your favorite brothers to fight demons, save people, and eat some pie" -->
-  <p>Play along with your favorite demon-hunting brothers to save people, hunt things, and eat some pie.</p>
+    <div class="row center-align">
+      <div class="col s12 m12 l12 l12">
+        <!-- paragraph "play along with your favorite brothers to fight demons, save people, and eat some pie" -->
+        <p>Play along with your favorite demon-hunting brothers to save people, hunt things, and eat some pie.</p>
+      </div>
+    </div>
+  </div>
 
-  <!-- game area, 2 columns, have some kind of themed border -->
+  <div class="container">
+    <!-- game area, 2 columns, have some kind of themed border -->
+    <div class="row" id="gameArea">
 
-  <!-- left column: pictures of the words if guessed right, holding image while waiting -->
-  <!-- holding image: all 13/14 titles in carousel/slideshow?? -->
+      <div class="col s12 m6 l6 xl6">
+        <p>Holding paragraph</p>
+        <!-- left column: pictures of the words if guessed right, holding image while waiting -->
+        <!-- holding image: all 13/14 titles in carousel/slideshow?? -->
+      </div>
 
-  <!-- right column:  -->
-  <p>Press any key to start!</p>
-  <p>Wins:</p>
-  <p>Losses:</p>
-  <p>Current Word:</p>
-  <!--  _ _ _ _ _ _ _  -->
-  <p>Number of guesses remaining:</p>
-  <p>Letters already guessed:</p>
+      <div class="col s12 m6 l6 xl6">
+        <!-- right column:  -->
+        <p>Press any key to start!</p>
+        <p>Wins:</p>
+        <p>Losses:</p>
+        <p>Current Word:</p>
+        <!--  _ _ _ _ _ _ _  -->
+        <p>Number of guesses remaining:</p>
+        <p>Letters already guessed:</p>
+      </div>
 
+    </div>
 
+  </div>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <script src="./assets/javascript/game.js"></script>
