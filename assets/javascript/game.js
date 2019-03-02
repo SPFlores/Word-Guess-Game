@@ -1,7 +1,15 @@
 // only allow letters to be pressed, not numbers
+document.onkeyup = (event) => {
+  if (event.keyCode <= 90 && event.keyCode >= 65) {
+    //  run function to determine if the letter is part of the word
+    console.log(event)
+  } else {
+    alert(`You can only choose letters in this game!`)
+  }
+}
 
 // make an array (object?) of words computer can choose from
-const computerChoices = [ `Sam Winchester`, `Dean Winchester`, `Crowley`, `Castiel`, `pie`, `angels and demons`, `devil's trap`, `leviathan`, `Impala`, `Enochian` ]
+const computerChoices = [`Sam Winchester`, `Dean Winchester`, `Crowley`, `Castiel`, `pie`, `angels and demons`, `devils trap`, `leviathan`, `Impala`, `Enochian`]
 
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
 
