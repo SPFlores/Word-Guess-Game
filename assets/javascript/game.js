@@ -2,7 +2,6 @@
 document.onkeyup = (event) => {
   if (event.keyCode <= 90 && event.keyCode >= 65) {
     //  run function to determine if the letter is part of the word
-    console.log(event)
   } else {
     alert(`You can only choose letters in this game!`)
   }
