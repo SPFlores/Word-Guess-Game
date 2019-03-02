@@ -14,32 +14,33 @@ const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices
 
 console.log(computerGuess)
 
-// document.onkeyup = e => {
-
-//   // Randomly chooses a choice from the options array. This is the Computer's guess.
-
-
-//   // Only run the following code block if the user presses "r" or "p" or "s".
-//   if (computerChoices.indexOf(e.key) !== -1) {
-//     if (e.key === computerGuess) {
-//       ties++
-//     } else {
-//       switch (e.key) {
-//         case 'r':
-//           computerGuess === 'p' ? losses++ : wins++
-//           break
-//         case 'p':
-//           computerGuess === 's' ? losses++ : wins++
-//           break
-//         case 's':
-//           computerGuess === 'r' ? losses++ : wins++
-//           break
-//         default:
-//           break
-//       }
-//     }
+let w = 0
+let l = 0
+let g = 12
 
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
+
+document.onkeyup = e => {
+
+  // Only run the following code block if the user presses "r" or "p" or "s".
+  if (computerChoices.indexOf(e.key) !== -1) {
+    if (e.key === computerGuess) {
+      ties++
+    } else {
+      switch (e.key) {
+        case 'r':
+          computerGuess === 'p' ? losses++ : wins++
+          break
+        case 'p':
+          computerGuess === 's' ? losses++ : wins++
+          break
+        case 's':
+          computerGuess === 'r' ? losses++ : wins++
+          break
+        default:
+          break
+      }
+    }
 
 // if word completed before guesses = 0, show corresponding image, increase wins by one; if not completed, show fail image and reset guesses, word, and increase losses by one
 
