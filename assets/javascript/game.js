@@ -1,9 +1,11 @@
 // only allow letters to be pressed, not numbers
-document.onkeyup = (event) => {
-  if (event.keyCode <= 90 && event.keyCode >= 65) {
-    //  run function to determine if the letter is part of the word
-  } else {
-    alert(`You can only choose letters in this game!`)
+const noNumbersHere = () => {
+  document.onkeyup = (event) => {
+    if (event.keyCode <= 57 && event.keyCode >= 48) {
+      alert(`You can only choose letters in this game!`)
+    } else {
+      //  run function to determine if the letter is part of the word
+    }
   }
 }
 
@@ -21,29 +23,28 @@ let g = 12
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
 
 document.onkeyup = e => {
+  noNumbersHere()
+  // if (computerChoices.indexOf(e.key) !== -1) {
+  //   if (e.key === computerGuess) {
+  //     ties++
+  //   } else {
+  //     switch (e.key) {
+  //       case 'r':
+  //         computerGuess === 'p' ? losses++ : wins++
+  //         break
+  //       case 'p':
+  //         computerGuess === 's' ? losses++ : wins++
+  //         break
+  //       case 's':
+  //         computerGuess === 'r' ? losses++ : wins++
+  //         break
+  //       default:
+  //         break
+  //     }
+  //   }
+  // }
+}
 
-  // Only run the following code block if the user presses "r" or "p" or "s".
-  if (computerChoices.indexOf(e.key) !== -1) {
-    if (e.key === computerGuess) {
-      ties++
-    } else {
-      switch (e.key) {
-        case 'r':
-          computerGuess === 'p' ? losses++ : wins++
-          break
-        case 'p':
-          computerGuess === 's' ? losses++ : wins++
-          break
-        case 's':
-          computerGuess === 'r' ? losses++ : wins++
-          break
-        default:
-          break
-      }
-    }
-
-// if word completed before guesses = 0, show corresponding image, increase wins by one; if not completed, show fail image and reset guesses, word, and increase losses by one
+// if word completed before guesses = 0, show corresponding image, increase wins by one, pick another word; if not completed, show fail image and reset guesses, word, and increase losses by one
 
 // make sure you can't input the same letter more than once
-
-// kj
