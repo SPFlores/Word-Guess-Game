@@ -16,9 +16,10 @@ const computerGuess = computerChoices[Math.floor(Math.random() * computerChoices
 
 console.log(computerGuess)
 
-let w = 0
-let l = 0
-let g = 12
+let wins = 0
+let losses = 0
+let guessesLeft = 12
+let guesses = [] 
 
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
 
