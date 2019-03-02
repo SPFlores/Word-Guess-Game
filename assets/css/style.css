@@ -1,5 +1,13 @@
+body {
+  background: black;
+  text: white;
+}
 #spnfont {
   font-family: 'ZCOOL XiaoWei', serif;
 }
 
 font-family: 'Cantata One', serif;
+
+#mainGameArea {
+  border: 2px solid white;
+}
