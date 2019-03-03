@@ -28,10 +28,10 @@ let result = () => {
 
 let progress = () => {
   if (guessesLeft < 1) {
-    losses -= 1
+    losses += 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
-    dosument.querySelector('#guessesLeft').innerHTML = `0`
-    //show losing picture
+     // show losing picture
+    // choose new word
   }
   if (counter + space === guesses.length) {
     wins += 1
@@ -56,18 +56,19 @@ check = function () {
         }
       }
       var j = (computerChoice.indexOf(guess))
-      if (j === -1) {
-        guessesLeft -= 1
-        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
-        progress() // check win vs lose status
-        // animate()  // change picture
-      } else {
-        progress()
+      switch (j === -1) {
+        case guessesLeft === 0:
+          document.querySelector('#guessesLeft').innerHTML = 'Number of guesses ramaining: 0'
+          break;
+        case guessesLeft > 0:
+          guessesLeft -= 1
+          document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
+          progress() // check win vs lose status
+          break;
       }
     }
   }
 }
-
 
 play = function () {
 
