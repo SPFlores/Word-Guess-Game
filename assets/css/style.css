@@ -2,6 +2,7 @@
   background: black;
   text: white;
 } */
+
 #spnfont {
   font-family: 'ZCOOL XiaoWei', serif;
 }
@@ -9,5 +10,21 @@
 font-family: 'Cantata One', serif;
 
 #mainGameArea {
-  border: 2px solid white;
+  border: 2px solid black;
+}
+
+#my-word {
+  margin: 0;
+  display: block;
+  padding: 0;
+  display: block;
+}
+
+#my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em;
 }

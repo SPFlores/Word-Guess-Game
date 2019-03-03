@@ -1,13 +1,3 @@
-const noNumbersHere = () => {
-  document.onkeyup = (event) => {
-    if (event.keyCode <= 57 && event.keyCode >= 48) {
-      alert(`You can only choose letters in this game!`)
-    } else {
-
-    }
-  }
-}
-
 const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`]
 computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
 // var remainingLetters = computerGuess.length
@@ -78,9 +68,10 @@ check = function () {
 
 play = function () {
 
-  computerChoice = computerChoice.replace(/\s/g, '-')
+  // computerChoice = computerChoice.replace(/\s/g, '-')
   console.log(computerChoice)
 
+  guessesLeft = 12
   guesses = []
   lives = 10
   wins = 0
