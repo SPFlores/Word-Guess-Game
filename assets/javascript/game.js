@@ -4,10 +4,6 @@ computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.leng
 // let wins = 0
 // let losses = 0
 let guessesLeft = 12
-// var showWins = document.getElementById("mywins")
-// var showLosses = document.getElementById("myloses")
-
-console.log(computerChoice)
 
 let result = () => {
   wordHolder = document.getElementById('hold')
@@ -34,6 +30,7 @@ let progress = () => {
   if (guessesLeft < 1) {
     losses -= 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
+    dosument.querySelector('#guessesLeft').innerHTML = `0`
     //show losing picture
   }
   if (counter + space === guesses.length) {
@@ -44,9 +41,6 @@ let progress = () => {
     // choose new word
   }
 }
-
-// if ((computerChoice.indexOf('_') === -1) && guessesLeft > 0) {
-//   document.querySelector('#mywins').innerHTML = `Wins: ${wins++}`
 
 check = function () {
   document.onkeyup = (event) => {
@@ -77,7 +71,6 @@ check = function () {
 
 play = function () {
 
-  // computerChoice = computerChoice.replace(/\s/g, '-')
   console.log(computerChoice)
 
   guessesLeft = 10
@@ -94,8 +87,5 @@ play = function () {
 play()
 
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
-
-// if word completed before guesses = 0, show corresponding image, increase wins by one, pick another word; if not completed, show fail image and reset guesses, word, and increase losses by one
-
 
 // make sure you can't input the same letter more than once
