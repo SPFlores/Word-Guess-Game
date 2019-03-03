@@ -9,12 +9,12 @@ const noNumbersHere = () => {
 }
 
 const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`]
-const computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
 // var remainingLetters = computerGuess.length
-let wins = 0
-let losses = 0
-let guessesLeft = 12
-let guesses = []
+// let wins = 0
+// let losses = 0
+// let guessesLeft = 12
+// let guesses = []
 var showWins = document.getElementById("mywins")
 var showLosses = document.getElementById("myloses")
 
@@ -66,8 +66,20 @@ check = function () {
   }
 }
 
-check()
-result()
+play = function () {
+
+  computerChoice = computerChoice.replace(/\s/g, '-')
+  console.log(computerChoice)
+
+  guesses = []
+  lives = 10
+  counter = 0
+  space = 0
+  check()
+  result()
+}
+
+play()
 
 // to change wins and losses
 
