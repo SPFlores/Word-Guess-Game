@@ -69,7 +69,7 @@ check = function () {
 play = function () {
 
   computerChoice = computerChoice.replace(/\s/g, '-')
-  console.log(computerChoice)
+  console.log(`${computerChoice} testing`)
 
   guesses = []
   lives = 10
