@@ -39,6 +39,9 @@ let progress = () => {
   if (counter + space === guesses.length) {
     wins += 1
     document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
+    // show picture from array according to word chosen
+    // clear out computerChoice
+    // choose new word
   }
 }
 
@@ -61,6 +64,7 @@ check = function () {
       var j = (computerChoice.indexOf(guess))
       if (j === -1) {
         guessesLeft -= 1
+        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
         progress() // check win vs lose status
         // animate()  // change picture
       } else {
@@ -76,10 +80,11 @@ play = function () {
   // computerChoice = computerChoice.replace(/\s/g, '-')
   console.log(computerChoice)
 
-  guessesLeft = 12
+  guessesLeft = 10
   guesses = []
   lives = 10
   wins = 0
+  losses = 0
   space = 0
   counter = space + 1
   check()
