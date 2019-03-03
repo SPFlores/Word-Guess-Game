@@ -13,10 +13,9 @@ computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.leng
 // var remainingLetters = computerGuess.length
 // let wins = 0
 // let losses = 0
-// let guessesLeft = 12
-// let guesses = []
-var showWins = document.getElementById("mywins")
-var showLosses = document.getElementById("myloses")
+let guessesLeft = 12
+// var showWins = document.getElementById("mywins")
+// var showLosses = document.getElementById("myloses")
 
 console.log(computerChoice)
 
@@ -34,10 +33,20 @@ let result = () => {
     } else {
       guess.innerHTML = '_'
     }
-
+    
     guesses.push(guess)
     wordHolder.appendChild(correct)
     correct.appendChild(guess)
+  }
+}
+
+let progress = function () {
+  for (var i = 0; i < guesses.length; i++) {
+    if ((computerChoice.indexOf('_') === -1) && guessesLeft > 0) {
+      document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
+    } else {
+      console.log(`still playing testing`)
+    }
   }
 }
 
@@ -50,21 +59,22 @@ check = function () {
       let guess = (event.key)
       for (var i = 0; i < computerChoice.length; i++) {
         if (computerChoice[i] === guess) {
-          guesses[i].innerHTML = guess
+          guesses[i].innerHTML = guess.toUpperCase()
           counter += 1
         }
       }
-      // var j = (computerChoice.indexOf(guess))
-      // if (j === -1) {
-      //   lives -= 1
-      //   comments()  // lose 
-      //   animate()  // change picture
-      // } else {
-      //   comments()
-      // }
+      var j = (computerChoice.indexOf(guess))
+      if (j === -1) {
+        lives -= 1
+        progress() // check win vs lose status
+        // animate()  // change picture
+      } else {
+        progress()
+      }
     }
   }
 }
+
 
 play = function () {
 
@@ -73,6 +83,7 @@ play = function () {
 
   guesses = []
   lives = 10
+  wins = 0
   counter = 0
   space = 0
   check()
@@ -81,22 +92,9 @@ play = function () {
 
 play()
 
-// to change wins and losses
-
 // compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
 
 // if word completed before guesses = 0, show corresponding image, increase wins by one, pick another word; if not completed, show fail image and reset guesses, word, and increase losses by one
 
-progress = function () {
-  showWins.innerHTML = `You have won ${wins = 0} games`
-  showLosses.innerHTML = `You have lost ${losses = 0} games`
-  for (var i = 0; i < geusses.length; i++) {
-    if (computerGuess.indexOf('_') === -1) {
-      showWins.innerHTML
-    } else {
-
-    }
-  }
-}
 
 // make sure you can't input the same letter more than once
