@@ -23,22 +23,27 @@ let result = () => {
     } else {
       guess.innerHTML = '_'
     }
-    
+
     guesses.push(guess)
     wordHolder.appendChild(correct)
     correct.appendChild(guess)
   }
 }
 
-let progress = function () {
-  for (var i = 0; i < guesses.length; i++) {
-    if ((computerChoice.indexOf('_') === -1) && guessesLeft > 0) {
-      document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
-    } else {
-      console.log(`still playing testing`)
-    }
+let progress = () => {
+  if (guessesLeft < 1) {
+    losses -= 1
+    document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
+    //show losing picture
+  }
+  if (counter + space === guesses.length) {
+    wins += 1
+    document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
   }
 }
+
+// if ((computerChoice.indexOf('_') === -1) && guessesLeft > 0) {
+//   document.querySelector('#mywins').innerHTML = `Wins: ${wins++}`
 
 check = function () {
   document.onkeyup = (event) => {
@@ -55,7 +60,7 @@ check = function () {
       }
       var j = (computerChoice.indexOf(guess))
       if (j === -1) {
-        lives -= 1
+        guessesLeft -= 1
         progress() // check win vs lose status
         // animate()  // change picture
       } else {
@@ -75,8 +80,8 @@ play = function () {
   guesses = []
   lives = 10
   wins = 0
-  counter = 0
   space = 0
+  counter = space + 1
   check()
   result()
 }
