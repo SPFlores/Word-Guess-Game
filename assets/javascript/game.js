@@ -30,7 +30,7 @@ let check = function () {
   document.onkeyup = (event) => {
     if (event.keyCode <= 57 && event.keyCode >= 48) {
       document.querySelector('#warning').innerHTML = `You can only choose letters in this game`
-    } else {
+    } else if (event.keyCode >= 65 && event.keyCode <= 90) {
       document.querySelector('#warning').innerHTML = ' '
       let guess = (event.key)
       for (var i = 0; i < computerChoice.length; i++) {
@@ -42,16 +42,18 @@ let check = function () {
 
       if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) { // if there are still guesses left and if the guess is wrong
         // put it in the array, show array on page, decrease number of guesses
+        guessesLeft -= 1
+        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
         let wrongul = document.createElement('ul')
         wrongul.setAttribute('id', 'my-wrong-word')
         wrongul.textContent = guess.toUpperCase()
         document.querySelector('#wronghold').append(wrongul)
-        guessesLeft -= 1
       } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
       }
+
+      progress()
     }
-    progress()
   }
 }
 
