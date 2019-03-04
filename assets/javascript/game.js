@@ -26,11 +26,52 @@ let result = () => {
   }
 }
 
+let check = function () {
+  document.onkeyup = (event) => {
+    if (event.keyCode <= 57 && event.keyCode >= 48) {
+      document.querySelector('#warning').innerHTML = `You can only choose letters in this game`
+    } else {
+      document.querySelector('#warning').innerHTML = ' '
+    }
+
+    let guess = (event.key)
+    for (var i = 0; i < computerChoice.length; i++) {
+      if (computerChoice[i] === guess) {
+        guesses[i].innerHTML = guess.toUpperCase()
+        counter += 1
+      }
+    }
+    // for (var j = 0; j < computerChoice.length; j++) {
+    //   if ((computerChoice[j] !== guess) && (guessesLeft === 0)) {
+    //     document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
+    //   } else if ((computerChoice[j] !== guess) && (guessesLeft > 0)) {
+    //     for (var k = 0; k < wrongGuesses.length; k++) {
+    //       // check to see if the letter is already in the wrongGuesses array
+    //       if (wrongGuesses[k] === guess) {
+    //         // if it is, keep it the same
+    //         wrongGuesses[k] === guess
+    //       } else if (wrongGuesses[k] !== guess) {
+    //         // if it isn't, add it at the index of wrongCounter, then increse wrongCounter 
+    //         incorrect = document.createElement('ul')
+    //         incorrect.setAttribute('id', 'in-word')
+    //         incorrectGuess = document.createElement('li')
+    //         incorrectGuess.setAttribute('class', 'wrongguess')
+    //         incorrectGuess.push(incorrectGuess)
+    //         document.querySelector('#wronghold').appendChild(incorrect)
+    //         correct.appendChild(incorrectGuess)
+    //       }
+    //     }
+    //   }
+    // }
+  }
+}
+
+
 let progress = () => {
   if (guessesLeft < 1) {
     losses += 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
-     // show losing picture
+    // show losing picture
     // choose new word
   }
   if (counter + space === guesses.length) {
@@ -42,51 +83,23 @@ let progress = () => {
   }
 }
 
-check = function () {
-  document.onkeyup = (event) => {
-    if (event.keyCode <= 57 && event.keyCode >= 48) {
-      document.querySelector('#warning').innerHTML = `You can only choose letters in this game`
-    } else {
-      document.querySelector('#warning').innerHTML = ' '
-      let guess = (event.key)
-      for (var i = 0; i < computerChoice.length; i++) {
-        if (computerChoice[i] === guess) {
-          guesses[i].innerHTML = guess.toUpperCase()
-          counter += 1
-        }
-      }
-      var j = (computerChoice.indexOf(guess))
-      switch (j === -1) {
-        case guessesLeft === 0:
-          document.querySelector('#guessesLeft').innerHTML = 'Number of guesses ramaining: 0'
-          break;
-        case guessesLeft > 0:
-          guessesLeft -= 1
-          document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
-          progress() // check win vs lose status
-          break;
-      }
-    }
-  }
-}
-
-play = function () {
+play = () => {
 
   console.log(computerChoice)
 
   guessesLeft = 10
   guesses = []
+  wrongGuesses = []
   lives = 10
   wins = 0
   losses = 0
   space = 0
   counter = space + 1
+  wrongCounter = 0
   check()
   result()
+  // checkIncorrect()
+  progress()
 }
 
 play()
-
-// compare user input to letters in word, fill in if there, decrease number of guesses remaining if not there
-
-// make sure you can't input the same letter more than once
