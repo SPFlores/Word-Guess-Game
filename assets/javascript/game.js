@@ -51,12 +51,6 @@ let check = _ => {
   }
 }
 
-let reset = _ => {
-  // reset already guessed
-  // reset guesses remaining
-  // pick new word
-}
-
 let progress = _ => {
   if (guessesLeft < 1) {
     losses += 1
@@ -74,8 +68,7 @@ let progress = _ => {
 
 play = _ => {
 
-  console.log(computerChoice)
-
+  computerChoice = computerChoice.replace(/\s/g, "-")
   guessesLeft = 10
   guesses = []
   wrongGuesses = []
@@ -87,6 +80,16 @@ play = _ => {
   result()
   check()
   progress()
+  
+  console.log(computerChoice)
 }
 
 play()
+
+let reset = _ => {
+  // clear current word
+  document.querySelector('#wordhold').innerHTML = ` `
+  // reset already guessed
+  document.querySelector('#wronghold').innerHTML = ` `
+  play()
+}
