@@ -8,7 +8,6 @@ body {
   font-family: 'ZCOOL XiaoWei', serif;
 }
 
-
 #mainGameArea {
   border: 2px solid black;
 }
@@ -21,6 +20,21 @@ body {
 }
 
 #my-word li {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 1.6em;
+}
+
+#my-wrong-word {
+  margin: 0;
+  display: inline-block;
+  padding: 0;
+}
+
+#my-wrong-word li {
   position: relative;
   list-style: none;
   margin: 0;

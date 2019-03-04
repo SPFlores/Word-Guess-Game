@@ -43,9 +43,12 @@ let check = function () {
       if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) { // if there are still guesses left and if the guess is wrong
         // put it in the array, show array on page, decrease number of guesses
         let wrongul = document.createElement('ul')
+        wrongul.setAttribute('id', 'my-wrong-word')
         wrongul.textContent = guess.toUpperCase()
         document.querySelector('#wronghold').append(wrongul)
+
         console.log('testing')
+
         // wrongGuesses[wrongCounter].innerHTML = guess.toUpperCase()
         // wrongCounter += 1
       } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
