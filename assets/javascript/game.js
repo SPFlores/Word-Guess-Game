@@ -39,11 +39,26 @@ let check = _ => {
       if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) {
         guessesLeft -= 1
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
-        let wrongul = document.createElement('ul')
-        wrongul.setAttribute('id', 'my-wrong-word')
-        wrongul.textContent = guess.toUpperCase()
-        document.querySelector('#wronghold').append(wrongul)
-      } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
+        wrongGuesses.push(guess.toUpperCase())
+        let wrongLetterHolder = document.querySelector('#wronghold')
+        wrongLetterHolder.innerHTML = wrongGuesses.join(', ')
+
+        // guess.innerHTML = guess.key
+        // wrongWordHolder = document.querySelector('#wronghold')
+        // incorrect = document.createElement('ul')
+        // wrongGuesses.push(guess)
+        // wrongWordHolder.appendChild(incorrect)
+        // incorrect.appendChild(guess)
+        
+        // let wrongul = document.createElement('ul')
+        // wrongul.setAttribute('id', 'my-wrong-word')
+        // wrongul.textContent = guess.toUpperCase()
+        // document.querySelector('#wronghold').append(wrongul)
+
+      } // if already in array (> -1) and guesses left > 0{
+      // do not put in array 
+      // } 
+      else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
       }
       progress()
@@ -68,19 +83,19 @@ let progress = _ => {
 
 play = _ => {
 
-  computerChoice = computerChoice.replace(/\s/g, "-")
-  guessesLeft = 10
+
+  guessesLeft = 13
   guesses = []
   wrongGuesses = []
-  lives = 10
   wins = 0
   losses = 0
   space = 0
   counter = space + 0
   result()
   check()
+
   progress()
-  
+
   console.log(computerChoice)
 }
 
@@ -91,5 +106,9 @@ let reset = _ => {
   document.querySelector('#wordhold').innerHTML = ` `
   // reset already guessed
   document.querySelector('#wronghold').innerHTML = ` `
+  // reset guesses remaining
+  let guessesLeft = 13
+  // show reset guesses
+  document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
   play()
 }
