@@ -32,31 +32,29 @@ let check = function () {
       document.querySelector('#warning').innerHTML = `You can only choose letters in this game`
     } else {
       document.querySelector('#warning').innerHTML = ' '
-    }
+      let guess = (event.key)
+      for (var i = 0; i < computerChoice.length; i++) {
+        if (computerChoice[i] === guess) { // if guess is in the word
+          guesses[i].innerHTML = guess.toUpperCase() // put it in the array
+          counter += 1 // increase counter
+        }
+      }
 
-    let guess = (event.key)
-    for (var i = 0; i < computerChoice.length; i++) {
-      if (computerChoice[i] === guess) { // if guess is in the word
-        guesses[i].innerHTML = guess.toUpperCase() // put it in the array
-        counter += 1 // increase counter
+      if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) { // if there are still guesses left and if the guess is wrong
+        // put it in the array, show array on page, decrease number of guesses
+        let wrongul = document.createElement('ul')
+        wrongul.textContent = guess.toUpperCase()
+        document.querySelector('#wronghold').append(wrongul)
+        console.log('testing')
+        // wrongGuesses[wrongCounter].innerHTML = guess.toUpperCase()
+        // wrongCounter += 1
+      } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
+        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
       }
     }
-
-    if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) { // if there are still guesses left and if the guess is wrong
-      // put it in the array, show array on page, decrease number of guesses
-      let wrongLi = document.createElement('li')
-      wrongLi.textContent = guess.toUpperCase()
-      document.querySelector('#wronghold').append(wrongLi)
-      console.log('testing')
-      // wrongGuesses[wrongCounter].innerHTML = guess.toUpperCase()
-      // wrongCounter += 1
-    } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
-      document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
-    }
+    progress()
   }
-  progress()
 }
-// }
 // }
 // }
 // }
