@@ -6,7 +6,7 @@ computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.leng
 let guessesLeft = 12
 
 let result = () => {
-  wordHolder = document.getElementById('hold')
+  wordHolder = document.querySelector('#hold')
   correct = document.createElement('ul')
 
   for (var i = 0; i < computerChoice.length; i++) {
@@ -26,6 +26,7 @@ let result = () => {
   }
 }
 
+
 let check = function () {
   document.onkeyup = (event) => {
     if (event.keyCode <= 57 && event.keyCode >= 48) {
@@ -36,35 +37,46 @@ let check = function () {
 
     let guess = (event.key)
     for (var i = 0; i < computerChoice.length; i++) {
-      if (computerChoice[i] === guess) {
-        guesses[i].innerHTML = guess.toUpperCase()
-        counter += 1
+      if (computerChoice[i] === guess) { // if guess is in the word
+        guesses[i].innerHTML = guess.toUpperCase() // put it in the array
+        counter += 1 // increase counter
+      } else if ((computerChoice[i] !== guess) && (guessesLeft > 0)) { // if guess is not in the array
+        // check to see if the answer has already been guessed
+        switch (wrongGuesses.indexOf(guess)) {
+          case -1:
+            wrongGuesses[wrongCounter]
+            wrongCounter += 1
+            break;
+          default:
+            break
+          // SWITCH if not, put it in at [wrongCounter], increase wrongCounter
+          // if it is, break
+          // let wrongCheck = () => {
+          //   wrongWordHolder = document.querySelector('#wronghold')
+          //   incorrect = document.createElement('ul')
+          //   let guess = (event.key).toUpperCase()
+          // }
+          // for (var i = 0; i < computerChoice.length; i++) {
+          //   incorrect.setAttribute('id', 'my-wrong-word')
+          //   wrongGuess = document.createElement('li')
+          //   wrongGuess.setAttribute('class', 'wrong-guess')
+          //   if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
+          //     document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
+          //   } else if ((computerChoice[i] !== guess) && (guessesLeft > 0) && (wrongGuesses.indexOf(guess) > -1)) {
+          //     wrongGuess.innerHTML = guess
+          //   }
+          //   wrongGuesses.push(guess)
+          //   wrongWordHolder.appendChild(incorrect)
+          //   incorrect.appendChild(guess)
+          // }
+        }
+
       }
     }
-    // for (var j = 0; j < computerChoice.length; j++) {
-    //   if ((computerChoice[j] !== guess) && (guessesLeft === 0)) {
-    //     document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
-    //   } else if ((computerChoice[j] !== guess) && (guessesLeft > 0)) {
-    //     for (var k = 0; k < wrongGuesses.length; k++) {
-    //       // check to see if the letter is already in the wrongGuesses array
-    //       if (wrongGuesses[k] === guess) {
-    //         // if it is, keep it the same
-    //         wrongGuesses[k] === guess
-    //       } else if (wrongGuesses[k] !== guess) {
-    //         // if it isn't, add it at the index of wrongCounter, then increse wrongCounter 
-    //         incorrect = document.createElement('ul')
-    //         incorrect.setAttribute('id', 'in-word')
-    //         incorrectGuess = document.createElement('li')
-    //         incorrectGuess.setAttribute('class', 'wrongguess')
-    //         incorrectGuess.push(incorrectGuess)
-    //         document.querySelector('#wronghold').appendChild(incorrect)
-    //         correct.appendChild(incorrectGuess)
-    //       }
-    //     }
-    //   }
-    // }
   }
 }
+
+
 
 
 let progress = () => {
@@ -94,12 +106,11 @@ play = () => {
   wins = 0
   losses = 0
   space = 0
-  counter = space + 1
+  counter = space + 0
   wrongCounter = 0
-  check()
   result()
-  // checkIncorrect()
-  progress()
+  check()
+  // progress()
 }
 
 play()
