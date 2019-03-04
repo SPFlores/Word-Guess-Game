@@ -42,19 +42,6 @@ let check = _ => {
         wrongGuesses.push(guess.toUpperCase())
         let wrongLetterHolder = document.querySelector('#wronghold')
         wrongLetterHolder.innerHTML = wrongGuesses.join(', ')
-
-        // guess.innerHTML = guess.key
-        // wrongWordHolder = document.querySelector('#wronghold')
-        // incorrect = document.createElement('ul')
-        // wrongGuesses.push(guess)
-        // wrongWordHolder.appendChild(incorrect)
-        // incorrect.appendChild(guess)
-        
-        // let wrongul = document.createElement('ul')
-        // wrongul.setAttribute('id', 'my-wrong-word')
-        // wrongul.textContent = guess.toUpperCase()
-        // document.querySelector('#wronghold').append(wrongul)
-
       } // if already in array (> -1) and guesses left > 0{
       // do not put in array 
       // } 
