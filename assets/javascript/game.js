@@ -46,11 +46,7 @@ let check = function () {
         wrongul.setAttribute('id', 'my-wrong-word')
         wrongul.textContent = guess.toUpperCase()
         document.querySelector('#wronghold').append(wrongul)
-
-        console.log('testing')
-
-        // wrongGuesses[wrongCounter].innerHTML = guess.toUpperCase()
-        // wrongCounter += 1
+        guessesLeft -= 1
       } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
       }
@@ -58,16 +54,6 @@ let check = function () {
     progress()
   }
 }
-// }
-// }
-// }
-// }
-// }
-// }
-// }
-// }
-// }
-// }
 
 let progress = () => {
   if (guessesLeft < 1) {
@@ -89,7 +75,7 @@ play = () => {
 
   console.log(computerChoice)
 
-  guessesLeft = 10 // = 10 - (wrongGuesses.length)
+  guessesLeft = 10
   guesses = []
   wrongGuesses = []
   lives = 10
@@ -97,7 +83,6 @@ play = () => {
   losses = 0
   space = 0
   counter = space + 0
-  wrongCounter = 0
   result()
   check()
   // progress()
