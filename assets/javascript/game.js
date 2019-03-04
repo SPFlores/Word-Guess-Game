@@ -1,11 +1,7 @@
 const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`]
-computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
-// var remainingLetters = computerGuess.length
-// let wins = 0
-// let losses = 0
-let guessesLeft = 12
+let computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
 
-let result = () => {
+let result = _ => {
   wordHolder = document.querySelector('#wordhold')
   correct = document.createElement('ul')
 
@@ -26,7 +22,7 @@ let result = () => {
   }
 }
 
-let check = function () {
+let check = _ => {
   document.onkeyup = (event) => {
     if (event.keyCode <= 57 && event.keyCode >= 48) {
       document.querySelector('#warning').innerHTML = `You can only choose letters in this game`
@@ -34,14 +30,13 @@ let check = function () {
       document.querySelector('#warning').innerHTML = ' '
       let guess = (event.key)
       for (var i = 0; i < computerChoice.length; i++) {
-        if (computerChoice[i] === guess) { // if guess is in the word
-          guesses[i].innerHTML = guess.toUpperCase() // put it in the array
-          counter += 1 // increase counter
+        if (computerChoice[i] === guess) {
+          guesses[i].innerHTML = guess.toUpperCase()
+          counter += 1
         }
       }
 
-      if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) { // if there are still guesses left and if the guess is wrong
-        // put it in the array, show array on page, decrease number of guesses
+      if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) {
         guessesLeft -= 1
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
         let wrongul = document.createElement('ul')
@@ -51,29 +46,33 @@ let check = function () {
       } else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
       }
-
       progress()
     }
   }
 }
 
-let progress = () => {
+let reset = _ => {
+  // reset already guessed
+  // reset guesses remaining
+  // pick new word
+}
+
+let progress = _ => {
   if (guessesLeft < 1) {
     losses += 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
     // show losing picture
-    // choose new word
+    reset()
   }
   if (counter + space === guesses.length) {
     wins += 1
     document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
     // show picture from array according to word chosen
-    // clear out computerChoice
-    // choose new word
+    reset()
   }
 }
 
-play = () => {
+play = _ => {
 
   console.log(computerChoice)
 
@@ -87,7 +86,7 @@ play = () => {
   counter = space + 0
   result()
   check()
-  // progress()
+  progress()
 }
 
 play()
