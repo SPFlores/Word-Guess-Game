@@ -36,22 +36,21 @@ let check = _ => {
         }
       }
 
-      if (guessesLeft > 0) {
-        if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.has(guess) != true)) {
-          wrongGuesses.add(guess.toUpperCase())
-          console.log(`has(guess) ${wrongGuesses.has(guess)}`)
-          console.log(`wrongGuesses.entries ${wrongGuesses.entries()}`)
-          console.log(`wrongGuesses.size${wrongGuesses.size}`)
-          console.log(`guesses left ${guessesLeft - wrongGuesses.size}`)
-          document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft - wrongGuesses.size}`
-          // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
-        } else if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.indexOf(guess) > -1)) {
-        }
-        progress()
+      if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) {
+        wrongGuesses.add(guess.toUpperCase())
+        console.log(`has(guess) ${wrongGuesses.has(guess)}`)
+        console.log(`wrongGuesses.entries ${wrongGuesses.entries()}`)
+        console.log(`wrongGuesses.size${wrongGuesses.size}`)
+        console.log(`guesses left ${guessesLeft - wrongGuesses.size}`)
+        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft - wrongGuesses.size}`
+        // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
+      } else if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.indexOf(guess) > -1)) {
       }
+      progress()
     }
   }
 }
+
 
 let progress = _ => {
   if (guessesLeft < 1) {
