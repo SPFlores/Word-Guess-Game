@@ -45,7 +45,6 @@ let check = _ => {
         let stringWrongGuesses = arrayWrongGuesses.join(", ")
         document.querySelector('#wronghold').innerHTML = `${stringWrongGuesses}`
       }
-      // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
       progress()
     }
   }
@@ -62,14 +61,10 @@ let progress = _ => {
   if (counter + space === guesses.length) {
     wins += 1
     document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
-    // show picture from array according to word chosen
-
-    document.querySelector('#holdingpic').innerHTML =
+    document.querySelector('#holdingpicandtext').innerHTML =
       `<img class="responsive-img" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText.text}"> 
       <br>
       <p>${imageAndText.paragraph}</p>`
-
-    // console.log(imageAndText[computerChoices.indexOf(computerChoice)])
     reset()
     play()
   }
@@ -107,7 +102,7 @@ let reset = _ => {
 
 play()
 
-let imageAndText = [
+const imageAndText = [
   {
     img: "./assets/images/sam-winchester.jpg",
     text: "Sam Winchester",
