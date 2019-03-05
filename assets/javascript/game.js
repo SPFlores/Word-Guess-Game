@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.carousel')
+})
+
 const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`, `angel-blade`, `chuck-shirley`, `hellhound`, `holy-water`, `salt`, `iron`, `amulet`, `lucifer`]
 
 let wins = 0
