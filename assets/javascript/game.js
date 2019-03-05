@@ -1,5 +1,8 @@
 const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`]
 
+let wins = 0
+let losses = 0
+
 let result = _ => {
   wordHolder = document.querySelector('#wordhold')
   correct = document.createElement('ul')
@@ -49,7 +52,7 @@ let check = _ => {
 }
 
 let progress = _ => {
-  if (guessesLeft < 1) {
+  if ((guessesLeft - wrongGuesses.size) < 1) {
     losses += 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
     // show losing picture
@@ -69,19 +72,18 @@ play = _ => {
 
   computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
 
+  console.log(computerChoice)
+
   wrongGuesses = new Set()
   guessesLeft = 13
   guesses = []
-  wins = 0
-  losses = 0
+  // wins = 0
+  // losses = 0
   space = 0
   counter = space + 0
   result()
   check()
-
   progress()
-
-  console.log(computerChoice)
 }
 
 play()
