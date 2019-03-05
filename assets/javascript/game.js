@@ -38,19 +38,16 @@ let check = _ => {
 
       if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) {
         wrongGuesses.add(guess.toUpperCase())
-        console.log(`has(guess) ${wrongGuesses.has(guess)}`)
-        console.log(`wrongGuesses.entries ${wrongGuesses.entries()}`)
-        console.log(`wrongGuesses.size${wrongGuesses.size}`)
-        console.log(`guesses left ${guessesLeft - wrongGuesses.size}`)
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft - wrongGuesses.size}`
-        // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
-      } else if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.indexOf(guess) > -1)) {
+        let arrayWrongGuesses = Array.from(wrongGuesses)
+        let stringWrongGuesses = arrayWrongGuesses.join(", ")
+        document.querySelector('#wronghold').innerHTML = `${stringWrongGuesses}`
       }
+      // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
       progress()
     }
   }
 }
-
 
 let progress = _ => {
   if (guessesLeft < 1) {
@@ -90,6 +87,7 @@ let reset = _ => {
   // clear current word
   document.querySelector('#wordhold').innerHTML = ` `
   // reset already guessed
+  wrongGuesses.clear()
   document.querySelector('#wronghold').innerHTML = ` `
   // reset guesses remaining
   let guessesLeft = 13
