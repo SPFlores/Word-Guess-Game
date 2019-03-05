@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.carousel')
 })
 
-const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`, `angel-blade`, `chuck-shirley`, `hellhound`, `holy-water`, `salt`, `iron`, `amulet`, `lucifer`]
+const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`, `angel-blade`, `chuck-shurley`, `hellhound`, `holy-water`, `salt`, `iron`, `amulet`, `lucifer`]
 
 let wins = 0
 let losses = 0
@@ -67,6 +67,13 @@ let progress = _ => {
     wins += 1
     document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
     // show picture from array according to word chosen
+
+    document.querySelector('#holdingpic').innerHTML =
+      `<img class="responsive-img" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText.text}"> 
+      <br>
+      <p>${imageAndText.paragraph}</p>`
+
+    // console.log(imageAndText[computerChoices.indexOf(computerChoice)])
     reset()
     play()
   }
@@ -103,3 +110,96 @@ let reset = _ => {
 }
 
 play()
+
+let imageAndText = [
+  {
+    img: "./assets/images/sam-winchester.jpg",
+    text: "Sam Winchester",
+    paragraph: "text about Sam"
+  },
+  {
+    img: "./assets/images/dean-winchester.jpg",
+    text: "Dean Winchester",
+    paragraph: "text abour Dean"
+  },
+  {
+    img: "./assets/images/crowley.jpg",
+    text: "Crowley",
+    paragraph: "text about Crowley"
+  },
+  {
+    img: "./assets/images/castiel.png",
+    text: "Castiel",
+    paragraph: "text about Castiel"
+  },
+  {
+    img: "./assets/images/pie.gif",
+    text: "Pie",
+    paragraph: "text about pie"
+  },
+  {
+    img: "./assets/images/angels.gif",
+    text: "Angels",
+    paragraph: "text about angels"
+  },
+  {
+    img: "./assets/images/demon.jpg",
+    text: "Demons",
+    paragraph: "text about demons"
+  },
+  {
+    img: "./assets/images/leviathan.png",
+    text: "Leviathan",
+    paragraph: "text about Leviathans"
+  },
+  {
+    img: "./assets/images/impala.jpg",
+    text: "Impala",
+    paragraph: "text about Baby"
+  },
+  {
+    img: "./assets/images/enochian.jpg",
+    text: "Enochian",
+    paragraph: "text about Enochian"
+  },
+  {
+    img: "./assets/images/angel-blade.jpg",
+    text: "Angel Blade",
+    paragraph: "text about angel blades"
+  },
+  {
+    img: "./assets/images/cuck-shurley.jpg",
+    text: "Chuck Shurley",
+    paragraph: "text about God"
+  },
+  {
+    img: "./assets/images/hellhound.gif",
+    text: "Hell Hound",
+    paragraph: "text about hell hounds"
+  },
+  {
+    img: "./assets/images/holy-water.jpg",
+    text: "Holy Water",
+    paragraph: "text about holy water"
+  },
+  {
+    img: "./assets/images/salt.jpg",
+    text: "Salt",
+    paragraph: "text about salt"
+  },
+  {
+    img: "./assets/images/iron.jpg",
+    text: "Iron",
+    paragraph: "text about iron"
+  },
+  {
+    img: "./assets/images/amulet.jpg",
+    text: "Amulet",
+    paragraph: "text about the amulet"
+  },
+  {
+    img: "./assets/images/lucifer.gif",
+    text: "Lucifer",
+    paragraph: "text about Lucifer"
+  },
+]
