@@ -32,7 +32,7 @@ let check = _ => {
       document.querySelector('#warning').innerHTML = ' '
       let guess = (event.key)
       for (var i = 0; i < computerChoice.length; i++) {
-        if (computerChoice[i] === guess) {
+        if ((computerChoice[i] === guess) && (guesses[i].innerHTML !== (guess.toUpperCase()))) {
           guesses[i].innerHTML = guess.toUpperCase()
           counter += 1
         }
@@ -44,6 +44,7 @@ let check = _ => {
         let arrayWrongGuesses = Array.from(wrongGuesses)
         let stringWrongGuesses = arrayWrongGuesses.join(", ")
         document.querySelector('#wronghold').innerHTML = `${stringWrongGuesses}`
+        console.log(wrongGuesses.size)
       }
       progress()
     }
