@@ -36,19 +36,19 @@ let check = _ => {
         }
       }
 
-      if ((guessesLeft > 0) && (computerChoice.indexOf(guess) === -1)) {
-        guessesLeft -= 1
-        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
-        wrongGuesses.push(guess.toUpperCase())
-        let wrongLetterHolder = document.querySelector('#wronghold')
-        wrongLetterHolder.innerHTML = wrongGuesses.join(', ')
-      } // if already in array (> -1) and guesses left > 0{
-      // do not put in array 
-      // } 
-      else if ((computerChoice[i] !== guess) && (guessesLeft === 0)) {
-        document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: 0`
+      if (guessesLeft > 0) {
+        if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.has(guess) != true)) {
+          wrongGuesses.add(guess.toUpperCase())
+          console.log(`has(guess) ${wrongGuesses.has(guess)}`)
+          console.log(`wrongGuesses.entries ${wrongGuesses.entries()}`)
+          console.log(`wrongGuesses.size${wrongGuesses.size}`)
+          console.log(`guesses left ${guessesLeft - wrongGuesses.size}`)
+          document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft - wrongGuesses.size}`
+          // document.querySelector('#wronghold').innerHTML = `${wrongGuesses.entries()}`
+        } else if ((computerChoice.indexOf(guess) === -1) && (wrongGuesses.indexOf(guess) > -1)) {
+        }
+        progress()
       }
-      progress()
     }
   }
 }
@@ -70,10 +70,9 @@ let progress = _ => {
 
 play = _ => {
 
-
+  wrongGuesses = new Set()
   guessesLeft = 13
   guesses = []
-  wrongGuesses = []
   wins = 0
   losses = 0
   space = 0
