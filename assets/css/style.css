@@ -1,10 +1,11 @@
 body {
-  /* background: black; */
+  background: black;
   /* text: white; */
   font-family: 'Cantata One', serif;
 }
 
 #spnfont {
+  color: red;
   font-family: 'ZCOOL XiaoWei', serif;
 }
 
