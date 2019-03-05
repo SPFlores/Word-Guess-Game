@@ -1,4 +1,4 @@
-const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`, `angel-blade`, `chuck-shurley`, `hellhound`, `holy-water`, `salt`, `iron`, `amulet`, `lucifer`]
+const computerChoices = [`sam-winchester`, `dean-winchester`, `crowley`, `castiel`, `pie`, `angels`, `demons`, `leviathan`, `impala`, `enochian`, `angel-blade`, `chuck-shurley`, `hell-hound`, `holy-water`, `salt`, `iron`, `amulet`, `lucifer`]
 
 let wins = 0
 let losses = 0
