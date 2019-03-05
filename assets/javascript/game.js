@@ -86,8 +86,6 @@ play = _ => {
   progress()
 }
 
-play()
-
 let reset = _ => {
   // clear current word
   document.querySelector('#wordhold').innerHTML = ` `
@@ -99,3 +97,5 @@ let reset = _ => {
   // show reset guesses
   document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
 }
+
+play()
