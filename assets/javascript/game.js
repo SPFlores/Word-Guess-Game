@@ -147,7 +147,7 @@ const imageAndText = [
   {
     img: './assets/images/impala.jpg',
     text: 'Impala',
-    paragraph: `The Impala is Dean's black 1967 Chevrolet Impala that was passed down to him by his father. The trunk holds many weapons that aid The Winchesters in their hunting activities. Dean refers to the Impala as "Baby."`
+    paragraph: `The Impala is Dean's black 1967 Chevrolet Impala that was passed down to him by his father. The trunk holds many weapons that aid the Winchesters in their hunting activities. Dean refers to the Impala as "Baby."`
   },
   {
     img: './assets/images/enochian.jpg',
