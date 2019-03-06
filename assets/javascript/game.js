@@ -17,7 +17,6 @@ let result = _ => {
     } else {
       guess.innerHTML = '_'
     }
-
     guesses.push(guess)
     wordHolder.appendChild(correct)
     correct.appendChild(guess)
@@ -60,7 +59,7 @@ let progress = _ => {
       <br>
         <img class="responsive-img correctWordImage" src=${lossImageAndText[0].img} alt="${lossImageAndText[0].text}"> 
       <br>
-            <h6 class="flow-text">${lossImageAndText[0].paragraph}</h6>`
+      <p class="flow-text">${lossImageAndText[0].paragraph}</p>`
     reset()
     play()
   }
@@ -72,8 +71,7 @@ let progress = _ => {
       <br>
       <img class="responsive-img correctWordImage" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText[computerChoices.indexOf(computerChoice)].text}"> 
       <br>
-      <h6 class="flow-text">${imageAndText[computerChoices.indexOf(computerChoice)].paragraph}</h6>`
-
+      <p class="flow-text">${imageAndText[computerChoices.indexOf(computerChoice)].paragraph}</p>`
     reset()
     play()
   }
@@ -83,13 +81,11 @@ play = _ => {
 
   computerChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
 
-  console.log(computerChoice)
+  // console.log(computerChoice)
 
   wrongGuesses = new Set()
   guessesLeft = 13
   guesses = []
-  // wins = 0
-  // losses = 0
   space = 0
   counter = space + 0
   result()
@@ -98,14 +94,10 @@ play = _ => {
 }
 
 let reset = _ => {
-  // clear current word
   document.querySelector('#wordhold').innerHTML = ` `
-  // reset already guessed
   wrongGuesses.clear()
   document.querySelector('#wronghold').innerHTML = ` `
-  // reset guesses remaining
   let guessesLeft = 13
-  // show reset guesses
   document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft}`
 }
 
