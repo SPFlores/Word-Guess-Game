@@ -44,7 +44,7 @@ let check = _ => {
         let arrayWrongGuesses = Array.from(wrongGuesses)
         let stringWrongGuesses = arrayWrongGuesses.join(", ")
         document.querySelector('#wronghold').innerHTML = `${stringWrongGuesses}`
-        console.log(wrongGuesses.size)
+        // console.log(wrongGuesses.size)
       }
       progress()
     }

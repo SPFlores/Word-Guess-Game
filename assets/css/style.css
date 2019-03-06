@@ -8,12 +8,16 @@ h1 {
   text-align: center;
 }
 
-#spnfont {
+.spnfont {
   font-family: 'ZCOOL XiaoWei', serif;
 }
 
 #mainGameArea {
-  border: 2px solid black;
+  border: 2px solid red;
+}
+
+#right-col {
+padding: 5px;
 }
 
 #my-word {
