@@ -115,17 +115,17 @@ const imageAndText = [
   {
     img: "./assets/images/sam-winchester.jpg",
     text: "Sam Winchester",
-    paragraph: "text about Sam"
+    paragraph: "Sam is the younger of the Winchester brothers. He and his brother Dean travel around the country saving people.  Also known as Moose."
   },
   {
     img: "./assets/images/dean-winchester.jpg",
     text: "Dean Winchester",
-    paragraph: "text abour Dean"
+    paragraph: "Dean is the oldest Winchester brother. He makes sure to take care of Sam while they're out hunting. Love pie, pudding, and Led Zeppelin."
   },
   {
     img: "./assets/images/crowley.jpg",
     text: "Crowley",
-    paragraph: "text about Crowley"
+    paragraph: `Crowley is a former crossroads demon and the King of Hell. Often, he travels with Sam and Dean to "help" them in his own way.`
   },
   {
     img: "./assets/images/castiel.png",
@@ -135,7 +135,7 @@ const imageAndText = [
   {
     img: "./assets/images/pie.gif",
     text: "Pie",
-    paragraph: "text about pie"
+    paragraph: "Dean's favorite dessert. Did you forget it when you went out for food?"
   },
   {
     img: "./assets/images/angels.gif",
