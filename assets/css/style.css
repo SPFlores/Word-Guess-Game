@@ -4,6 +4,10 @@ body {
   font-family: 'Cantata One', serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 #spnfont {
   font-family: 'ZCOOL XiaoWei', serif;
 }
@@ -39,4 +43,9 @@ body {
   margin: 0;
   display: inline-block;
   padding: 0 10px;
+}
+
+.correctWordImage {
+  display: block;
+  margin: auto;
 }

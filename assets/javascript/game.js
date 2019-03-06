@@ -63,9 +63,12 @@ let progress = _ => {
     wins += 1
     document.querySelector('#mywins').innerHTML = `Wins: ${wins}`
     document.querySelector('#holdingpicandtext').innerHTML =
-      `<img class="responsive-img" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText.text}"> 
+      `<h3 class="spnfont flow-tex">${imageAndText[computerChoices.indexOf(computerChoice)].text}</h3>
       <br>
-      <p>${imageAndText.paragraph}</p>`
+      <img class="responsive-img correctWordImage" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText[computerChoices.indexOf(computerChoice)].text}"> 
+      <br>
+      <p class="flow-text">${imageAndText[computerChoices.indexOf(computerChoice)].paragraph}</p>`
+
     reset()
     play()
   }
