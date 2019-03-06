@@ -15,6 +15,7 @@ h1 {
 #mainGameArea {
   border: 8px solid #B71C1C;
   border-style: groove;
+  padding: 5px;
 }
 
 #right-col {

@@ -55,7 +55,12 @@ let progress = _ => {
   if ((guessesLeft - wrongGuesses.size) < 1) {
     losses += 1
     document.querySelector('#mylosses').innerHTML = `Losses: ${losses}`
-    // show losing picture
+    document.querySelector('#holdingpicandtext').innerHTML =
+      `<h3 class="spnfont flow-tex">${lossImageAndText[0].text}</h3>
+      <br>
+        <img class="responsive-img correctWordImage" src=${lossImageAndText[0].img} alt="${lossImageAndText[0].text}"> 
+      <br>
+            <h6 class="flow-text">${lossImageAndText[0].paragraph}</h6>`
     reset()
     play()
   }
@@ -197,4 +202,13 @@ const imageAndText = [
     text: "Lucifer",
     paragraph: "text about Lucifer"
   },
+
+]
+
+let lossImageAndText = [
+{
+  img: "./assets/images/lost.gif",
+    text: "Lost",
+      paragraph: "Sam lost his shoe, and you lost this game!"
+}
 ]
