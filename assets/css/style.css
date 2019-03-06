@@ -13,11 +13,12 @@ h1 {
 }
 
 #mainGameArea {
-  border: 2px solid red;
+  border: 8px solid #B71C1C;
+  border-style: groove;
 }
 
 #right-col {
-padding: 30px;
+  padding: 30px;
 }
 
 #my-word {

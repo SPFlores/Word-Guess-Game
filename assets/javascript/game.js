@@ -67,7 +67,7 @@ let progress = _ => {
       <br>
       <img class="responsive-img correctWordImage" src=${imageAndText[computerChoices.indexOf(computerChoice)].img} alt="${imageAndText[computerChoices.indexOf(computerChoice)].text}"> 
       <br>
-      <p class="flow-text">${imageAndText[computerChoices.indexOf(computerChoice)].paragraph}</p>`
+      <h6 class="flow-text">${imageAndText[computerChoices.indexOf(computerChoice)].paragraph}</h6>`
 
     reset()
     play()
