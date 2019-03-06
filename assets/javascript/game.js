@@ -42,7 +42,7 @@ let check = _ => {
         wrongGuesses.add(guess.toUpperCase())
         document.querySelector('#guessesLeft').innerHTML = `Number of guesses remaining: ${guessesLeft - wrongGuesses.size}`
         let arrayWrongGuesses = Array.from(wrongGuesses)
-        let stringWrongGuesses = arrayWrongGuesses.join(", ")
+        let stringWrongGuesses = arrayWrongGuesses.join(', ')
         document.querySelector('#wronghold').innerHTML = `${stringWrongGuesses}`
         // console.log(wrongGuesses.size)
       }
@@ -113,102 +113,102 @@ play()
 
 const imageAndText = [
   {
-    img: "./assets/images/sam-winchester.jpg",
-    text: "Sam Winchester",
+    img: './assets/images/sam-winchester.jpg',
+    text: 'Sam Winchester',
     paragraph: "Sam is the younger of the Winchester brothers. He and his brother Dean travel around the country saving people. He's the best at research.  Also known as Moose."
   },
   {
-    img: "./assets/images/dean-winchester.jpg",
-    text: "Dean Winchester",
+    img: './assets/images/dean-winchester.jpg',
+    text: 'Dean Winchester',
     paragraph: "Dean is the oldest Winchester brother. He makes sure to take care of Sam while they're out hunting because family is very important to him. Loves pie, pudding, and Led Zeppelin."
   },
   {
-    img: "./assets/images/crowley.jpg",
-    text: "Crowley",
+    img: './assets/images/crowley.jpg',
+    text: 'Crowley',
     paragraph: `Crowley is a former crossroads demon and the King of Hell. Often, he travels with Sam and Dean to "help" them in his own way. Don't call him Fergus.`
   },
   {
-    img: "./assets/images/castiel.png",
-    text: "Castiel",
+    img: './assets/images/castiel.png',
+    text: 'Castiel',
     paragraph: `Castiel, often shortened to Cas, is an angel of the lord, wings and all. He often saves the brothers from threats and fights alongside them on their hunting trips.`
   },
   {
-    img: "./assets/images/pie.gif",
-    text: "Pie",
+    img: './assets/images/pie.gif',
+    text: 'Pie',
     paragraph: "Dean's favorite dessert. Did you forget it when you went out for food?"
   },
   {
-    img: "./assets/images/angels.gif",
-    text: "Angels",
+    img: './assets/images/angels.gif',
+    text: 'Angels',
     paragraph: `Angels are powerful celestial beings created by God. They are responsible of maintaining Heaven and are imbued with considerable power. Sam and Dean often come across angels while hunting.`
   },
   {
-    img: "./assets/images/demon.jpg",
-    text: "Demons",
+    img: './assets/images/demon.jpg',
+    text: 'Demons',
     paragraph: `Demons are malevolent spirits that have endured extensive torture in Hell and have become extremely evil and very powerful. They are able to roam in their smoke form.`
   },
   {
-    img: "./assets/images/leviathan.png",
-    text: "Leviathan",
-    paragraph: `The Leviathans are a race of ancient monsters that were God's very first beasts. The creatures were released from Purgatory and had to be stopped by the Winchester brothers.` 
+    img: './assets/images/leviathan.png',
+    text: 'Leviathan',
+    paragraph: `The Leviathans are a race of ancient monsters that were God's very first beasts. The creatures were released from Purgatory and had to be stopped by the Winchester brothers.`
   },
   {
-    img: "./assets/images/impala.jpg",
-    text: "Impala",
+    img: './assets/images/impala.jpg',
+    text: 'Impala',
     paragraph: `The Impala is Dean's black 1967 Chevrolet Impala that was passed down to him by his father. The trunk holds many weapons that aid The Winchesters in their hunting activities. Dean refers to the Impala as "Baby."`
   },
   {
-    img: "./assets/images/enochian.jpg",
-    text: "Enochian",
+    img: './assets/images/enochian.jpg',
+    text: 'Enochian',
     paragraph: `Enochian is the language of angels. Aside from its use for communication, Enochian is used for spellwork and rituals.`
   },
   {
-    img: "./assets/images/angel-blade.jpg",
-    text: "Angel Blade",
+    img: './assets/images/angel-blade.jpg',
+    text: 'Angel Blade',
     paragraph: `Angel Blades are weapons carried by most angels. They're long, silver, triple-edged daggers that can be used to kill angels, hellhounds, demons, and other supernatural creatures. `
   },
   {
-    img: "./assets/images/cuck-shurley.jpg",
-    text: "Chuck Shurley",
-    paragraph: `text about God`
+    img: './assets/images/cuck-shurley.jpg',
+    text: 'Chuck Shurley',
+    paragraph: `Chuck Shurley originally came into the Winchesters' lives when they found out he was writing books on their lives. THey later discovered that he is actually God and was writing what he knew had or would happen.`
   },
   {
-    img: "./assets/images/hellhound.gif",
-    text: "Hell Hound",
-    paragraph: `text about hell hounds`
+    img: './assets/images/hellhound.gif',
+    text: 'Hell Hound',
+    paragraph: `Hellhounds are canine-like beasts which are known to serve demons. Hellhounds are ferocious and are often tasked with collecting the souls of humans, when they can only be seen by those whom they have come for.`
   },
   {
-    img: "./assets/images/holy-water.jpg",
-    text: "Holy Water",
-    paragraph: `text about holy water`
+    img: './assets/images/holy-water.jpg',
+    text: 'Holy Water',
+    paragraph: `Holy water is a weapon that hunters often use to fight demons as it burns demons. It is common to carry a silver bottle of holy water on hunts.`
   },
   {
-    img: "./assets/images/salt.jpg",
-    text: "Salt",
-    paragraph: `text about salt`
+    img: './assets/images/salt.jpg',
+    text: 'Salt',
+    paragraph: `Salt is often used by hunters to repel ghosts, demons, hellhounds, and other supernatural beings. It is often spread in a line or circle to prevent a being from crossing a boundary.`
   },
   {
-    img: "./assets/images/iron.jpg",
-    text: "Iron",
-    paragraph: `text about iron`
+    img: './assets/images/iron.jpg',
+    text: 'Iron',
+    paragraph: `Iron is a metallic element that possesses strong supernatural properties and is often used by hunters. It can burn demons and make ghosts temporarily disappear, among other things.`
   },
   {
-    img: "./assets/images/amulet.jpg",
-    text: "Amulet",
-    paragraph: `text about the amulet`
+    img: './assets/images/amulet.jpg',
+    text: 'Amulet',
+    paragraph: `Sam gave Dean this amulet when they were children and Dean has worn it ever since. Cas informed the brothers that the amulet was an indicator that could lead them to God.`
   },
   {
-    img: "./assets/images/lucifer.gif",
-    text: "Lucifer",
-    paragraph: `text about Lucifer`
+    img: './assets/images/lucifer.gif',
+    text: 'Lucifer',
+    paragraph: `Lucifer, also known as The Devil, is a fallen archangel. He is the original ruler of Hell and the creator of demons. Sam and Dean often fight against him in their travels.`
   },
 
 ]
 
 let lossImageAndText = [
-{
-  img: "./assets/images/lost.gif",
-    text: "Lost",
-      paragraph: `Sam lost his shoe, and you lost this game!`
-}
+  {
+    img: './assets/images/lost.gif',
+    text: 'Lost',
+    paragraph: `Sam lost his shoe, and you lost this game!`
+  }
 ]
