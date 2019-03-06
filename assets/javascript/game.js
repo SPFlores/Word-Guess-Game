@@ -115,22 +115,22 @@ const imageAndText = [
   {
     img: "./assets/images/sam-winchester.jpg",
     text: "Sam Winchester",
-    paragraph: "Sam is the younger of the Winchester brothers. He and his brother Dean travel around the country saving people.  Also known as Moose."
+    paragraph: "Sam is the younger of the Winchester brothers. He and his brother Dean travel around the country saving people. He's the best at research.  Also known as Moose."
   },
   {
     img: "./assets/images/dean-winchester.jpg",
     text: "Dean Winchester",
-    paragraph: "Dean is the oldest Winchester brother. He makes sure to take care of Sam while they're out hunting. Love pie, pudding, and Led Zeppelin."
+    paragraph: "Dean is the oldest Winchester brother. He makes sure to take care of Sam while they're out hunting because family is very important to him. Loves pie, pudding, and Led Zeppelin."
   },
   {
     img: "./assets/images/crowley.jpg",
     text: "Crowley",
-    paragraph: `Crowley is a former crossroads demon and the King of Hell. Often, he travels with Sam and Dean to "help" them in his own way.`
+    paragraph: `Crowley is a former crossroads demon and the King of Hell. Often, he travels with Sam and Dean to "help" them in his own way. Don't call him Fergus.`
   },
   {
     img: "./assets/images/castiel.png",
     text: "Castiel",
-    paragraph: "text about Castiel"
+    paragraph: `Castiel, often shortened to Cas, is an angel of the lord, wings and all. He often saves the brothers from threats and fights alongside them on their hunting trips.`
   },
   {
     img: "./assets/images/pie.gif",
@@ -140,67 +140,67 @@ const imageAndText = [
   {
     img: "./assets/images/angels.gif",
     text: "Angels",
-    paragraph: "text about angels"
+    paragraph: `Angels are powerful celestial beings created by God. They are responsible of maintaining Heaven and are imbued with considerable power. Sam and Dean often come across angels while hunting.`
   },
   {
     img: "./assets/images/demon.jpg",
     text: "Demons",
-    paragraph: "text about demons"
+    paragraph: `Demons are malevolent spirits that have endured extensive torture in Hell and have become extremely evil and very powerful. They are able to roam in their smoke form.`
   },
   {
     img: "./assets/images/leviathan.png",
     text: "Leviathan",
-    paragraph: "text about Leviathans"
+    paragraph: `The Leviathans are a race of ancient monsters that were God's very first beasts. The creatures were released from Purgatory and had to be stopped by the Winchester brothers.` 
   },
   {
     img: "./assets/images/impala.jpg",
     text: "Impala",
-    paragraph: "text about Baby"
+    paragraph: `The Impala is Dean's black 1967 Chevrolet Impala that was passed down to him by his father. The trunk holds many weapons that aid The Winchesters in their hunting activities. Dean refers to the Impala as "Baby."`
   },
   {
     img: "./assets/images/enochian.jpg",
     text: "Enochian",
-    paragraph: "text about Enochian"
+    paragraph: `Enochian is the language of angels. Aside from its use for communication, Enochian is used for spellwork and rituals.`
   },
   {
     img: "./assets/images/angel-blade.jpg",
     text: "Angel Blade",
-    paragraph: "text about angel blades"
+    paragraph: `Angel Blades are weapons carried by most angels. They're long, silver, triple-edged daggers that can be used to kill angels, hellhounds, demons, and other supernatural creatures. `
   },
   {
     img: "./assets/images/cuck-shurley.jpg",
     text: "Chuck Shurley",
-    paragraph: "text about God"
+    paragraph: `text about God`
   },
   {
     img: "./assets/images/hellhound.gif",
     text: "Hell Hound",
-    paragraph: "text about hell hounds"
+    paragraph: `text about hell hounds`
   },
   {
     img: "./assets/images/holy-water.jpg",
     text: "Holy Water",
-    paragraph: "text about holy water"
+    paragraph: `text about holy water`
   },
   {
     img: "./assets/images/salt.jpg",
     text: "Salt",
-    paragraph: "text about salt"
+    paragraph: `text about salt`
   },
   {
     img: "./assets/images/iron.jpg",
     text: "Iron",
-    paragraph: "text about iron"
+    paragraph: `text about iron`
   },
   {
     img: "./assets/images/amulet.jpg",
     text: "Amulet",
-    paragraph: "text about the amulet"
+    paragraph: `text about the amulet`
   },
   {
     img: "./assets/images/lucifer.gif",
     text: "Lucifer",
-    paragraph: "text about Lucifer"
+    paragraph: `text about Lucifer`
   },
 
 ]
@@ -209,6 +209,6 @@ let lossImageAndText = [
 {
   img: "./assets/images/lost.gif",
     text: "Lost",
-      paragraph: "Sam lost his shoe, and you lost this game!"
+      paragraph: `Sam lost his shoe, and you lost this game!`
 }
 ]
